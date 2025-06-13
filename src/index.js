@@ -51,8 +51,8 @@ const coerceRequestBody = (body) => ({
 
 const joinGeoRegions = (geoRegions) => toStringArray(geoRegions)?.join(',')
 app.get('/', (req, res) => {
- return "this is working"
-  }
+ res.send("this is working");
+  };
 app.post('/api', (req, res) => {
   const requestBody = coerceRequestBody(req.body)
   const validationErrors = validateRequest(requestBody, validator)
